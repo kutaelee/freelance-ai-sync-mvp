@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ORBIT SYNC | PROJECT ORBIT</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        orbit: {
+                            bg: '#0E0F14',
+                            surface: '#111318',
+                            text: '#EDEFF2',
+                            mint: '#2AF6C5',
+                            cyan: '#3ABEFF',
+                            blue: '#4F7DFF',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: #0E0F14;
+            color: #EDEFF2;
+        }
+        .orbit-gradient {
+            background: linear-gradient(135deg, #2AF6C5 0%, #3ABEFF 50%, #4F7DFF 100%);
+        }
+        .orbit-gradient-text {
+            background: linear-gradient(135deg, #2AF6C5 0%, #3ABEFF 50%, #4F7DFF 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .orbit-card {
+            background: #111318;
+            border: 1px solid rgba(237, 239, 242, 0.05);
+            transition: all 0.2s ease-in-out;
+        }
+        .orbit-card:hover {
+            border: 1px solid rgba(42, 246, 197, 0.3);
+        }
+        .glass-nav {
+            background: rgba(14, 15, 20, 0.8);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid rgba(237, 239, 242, 0.05);
+        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0E0F14; }
+        ::-webkit-scrollbar-thumb { background: #111318; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #4F7DFF; }
+    </style>
+</head>
+<body class="overflow-x-hidden antialiased">
+
+    <!-- Header -->
+    <header class="fixed w-full z-50 px-6 py-4 flex justify-between items-center glass-nav">
+        <div class="text-xl font-bold tracking-tight flex items-center gap-2">
+            <div class="w-2 h-6 orbit-gradient rounded-full"></div>
+            <span>ORBIT SYNC</span>
+        </div>
+        <nav class="hidden md:flex space-x-10 text-[13px] font-semibold tracking-wide text-orbit-text/60">
+            <a href="#problems" class="hover:text-orbit-mint transition uppercase">Challenges</a>
+            <a href="#solution" class="hover:text-orbit-cyan transition uppercase">Architecture</a>
+            <a href="#cta" class="px-5 py-2 orbit-gradient rounded-md text-orbit-bg font-bold hover:opacity-90 transition">ACCESS</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative pt-48 pb-32 px-6">
+        <div class="max-w-5xl mx-auto">
+            <div class="mb-4 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orbit-mint/10 border border-orbit-mint/20 text-orbit-mint text-[11px] font-bold tracking-widest uppercase">
+                Project Orbit v1.0
+            </div>
+            <h1 class="text-6xl md:text-8xl font-extrabold mb-8 leading-[1.05] tracking-tight">
+                Engineering <br>
+                <span class="orbit-gradient-text">Freelance Logic.</span>
+            </h1>
+            <p class="text-lg md:text-xl text-orbit-text/60 mb-12 max-w-2xl font-normal leading-relaxed">
+                Freelance-AI Sync provides a high-performance automation layer for modern builders. 
+                Offload administrative overhead to a customized AI runtime and focus on core execution.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+                <a href="#cta" class="px-10 py-5 orbit-gradient text-orbit-bg font-black rounded-sm hover:translate-y-[-2px] transition-all shadow-[0_10px_20px_-10px_rgba(42,246,197,0.3)] uppercase tracking-tighter">
+                    Deploy Sync Now
+                </a>
+                <a href="#solution" class="px-10 py-5 bg-orbit-surface border border-orbit-text/10 rounded-sm hover:bg-orbit-text/5 transition font-bold uppercase tracking-tighter">
+                    Read Whitepaper
+                </a>
+            </div>
+        </div>
+        <!-- Decorative Grid -->
+        <div class="absolute top-0 right-0 w-full h-full -z-10 opacity-[0.03] pointer-events-none" style="background-image: radial-gradient(#EDEFF2 1px, transparent 1px); background-size: 40px 40px;"></div>
+    </section>
+
+    <!-- Problems Section -->
+    <section id="problems" class="py-32 px-6 border-t border-orbit-text/5 bg-orbit-surface/30">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+                <div class="max-w-xl">
+                    <h2 class="text-4xl font-bold mb-4 tracking-tight">Operational Inefficiency</h2>
+                    <p class="text-orbit-text/50">The freelance ecosystem is plagued by manual orchestration. We identify and eliminate these bottlenecks.</p>
+                </div>
+                <div class="h-[1px] flex-1 bg-orbit-text/10 mb-5 hidden md:block"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="orbit-card p-10 rounded-sm">
+                    <div class="text-orbit-mint font-mono text-sm mb-8 uppercase tracking-widest">01 / Latency</div>
+                    <h3 class="text-xl font-bold mb-4">Communication Overhead</h3>
+                    <p class="text-orbit-text/40 text-sm leading-relaxed">Manual client management and scheduling create significant latency in project delivery cycles.</p>
+                </div>
+                <div class="orbit-card p-10 rounded-sm">
+                    <div class="text-orbit-cyan font-mono text-sm mb-8 uppercase tracking-widest">02 / Scaling</div>
+                    <h3 class="text-xl font-bold mb-4">Pipeline Instability</h3>
+                    <p class="text-orbit-text/40 text-sm leading-relaxed">Inconsistent project sourcing leads to resource starvation. Automated lead generation ensures continuous operation.</p>
+                </div>
+                <div class="orbit-card p-10 rounded-sm">
+                    <div class="text-orbit-blue font-mono text-sm mb-8 uppercase tracking-widest">03 / Tech Debt</div>
+                    <h3 class="text-xl font-bold mb-4">Integration Gap</h3>
+                    <p class="text-orbit-text/40 text-sm leading-relaxed">The disconnect between AI capabilities and actual workflows creates untapped operational leverage.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section (AI Workflow) -->
+    <section id="solution" class="py-32 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-col lg:flex-row items-center gap-20">
+                <div class="flex-1">
+                    <div class="text-orbit-cyan font-mono text-[10px] mb-6 uppercase tracking-[0.3em]">System Architecture</div>
+                    <h2 class="text-4xl md:text-5xl font-bold mb-8 tracking-tighter">Autonomous <br><span class="orbit-gradient-text">Sync Layer</span></h2>
+                    <p class="text-orbit-text/50 mb-10 leading-relaxed max-w-lg">
+                        Our engine integrates with your existing toolchain to provide a persistent, persona-driven AI assistant that operates 24/7.
+                    </p>
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4 group">
+                            <div class="mt-1 w-5 h-5 flex items-center justify-center border border-orbit-mint text-orbit-mint text-[10px] group-hover:bg-orbit-mint group-hover:text-orbit-bg transition">1</div>
+                            <div>
+                                <h4 class="font-bold text-orbit-text">Automated Invoicing</h4>
+                                <p class="text-xs text-orbit-text/40 mt-1 uppercase tracking-wider">Deterministic ledger reconciliation</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4 group">
+                            <div class="mt-1 w-5 h-5 flex items-center justify-center border border-orbit-cyan text-orbit-cyan text-[10px] group-hover:bg-orbit-cyan group-hover:text-orbit-bg transition">2</div>
+                            <div>
+                                <h4 class="font-bold text-orbit-text">Proposal Synthesis</h4>
+                                <p class="text-xs text-orbit-text/40 mt-1 uppercase tracking-wider">Persona-mapped bid generation</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4 group">
+                            <div class="mt-1 w-5 h-5 flex items-center justify-center border border-orbit-blue text-orbit-blue text-[10px] group-hover:bg-orbit-blue group-hover:text-orbit-bg transition">3</div>
+                            <div>
+                                <h4 class="font-bold text-orbit-text">Runtime Support</h4>
+                                <p class="text-xs text-orbit-text/40 mt-1 uppercase tracking-wider">Asynchronous stakeholder handling</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-1 w-full">
+                    <div class="orbit-card p-1 rounded-sm border-orbit-cyan/20 overflow-hidden">
+                        <div class="bg-orbit-bg p-8">
+                            <div class="flex items-center justify-between mb-10">
+                                <div class="flex gap-1.5">
+                                    <div class="w-2.5 h-2.5 rounded-full bg-orbit-text/10"></div>
+                                    <div class="w-2.5 h-2.5 rounded-full bg-orbit-text/10"></div>
+                                    <div class="w-2.5 h-2.5 rounded-full bg-orbit-text/10"></div>
+                                </div>
+                                <span class="text-[9px] font-mono text-orbit-mint animate-pulse">SYSTEM_ACTIVE</span>
+                            </div>
+                            <div class="space-y-8">
+                                <div class="font-mono text-xs">
+                                    <div class="flex justify-between text-orbit-text/30 mb-2 uppercase tracking-tighter">
+                                        <span>CPU LOAD</span>
+                                        <span>12.4%</span>
+                                    </div>
+                                    <div class="w-full h-[2px] bg-orbit-text/5">
+                                        <div class="h-full orbit-gradient w-[12%]"></div>
+                                    </div>
+                                </div>
+                                <div class="p-5 bg-orbit-surface border border-orbit-text/5 font-mono text-[11px] leading-relaxed">
+                                    <div class="flex gap-2">
+                                        <span class="text-orbit-mint">$</span>
+                                        <span class="text-orbit-text/80">sync --deploy --target="lead_gen"</span>
+                                    </div>
+                                    <div class="text-orbit-text/30 mt-2">> Scanning Upwork API... [OK]</div>
+                                    <div class="text-orbit-text/30">> Matching "Rust Engineer" persona... [100%]</div>
+                                    <div class="text-orbit-cyan mt-1">> 3 proposals queued for delivery.</div>
+                                </div>
+                                <div class="flex gap-4">
+                                    <div class="flex-1 orbit-card p-4 text-center">
+                                        <div class="text-[10px] text-orbit-text/30 uppercase">Uptime</div>
+                                        <div class="text-sm font-bold mt-1">99.99%</div>
+                                    </div>
+                                    <div class="flex-1 orbit-card p-4 text-center">
+                                        <div class="text-[10px] text-orbit-text/30 uppercase">Threads</div>
+                                        <div class="text-sm font-bold mt-1">1,024</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="cta" class="py-32 px-6">
+        <div class="max-w-4xl mx-auto orbit-card p-16 rounded-sm text-center relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-[2px] orbit-gradient"></div>
+            <h2 class="text-4xl md:text-5xl font-extrabold mb-6 tracking-tight">Deploy to Beta.</h2>
+            <p class="text-orbit-text/50 mb-12 text-lg max-w-xl mx-auto">
+                Join the initial cohort of developers and freelancers scaling their operations with Orbit Sync.
+            </p>
+            <form id="waitlist-form" class="flex flex-col sm:flex-row gap-2 max-w-md mx-auto">
+                <input 
+                    type="email" 
+                    id="email-input"
+                    required
+                    placeholder="dev@domain.com" 
+                    class="flex-1 bg-orbit-bg border border-orbit-text/10 rounded-sm px-5 py-4 outline-none focus:border-orbit-cyan transition font-mono text-sm"
+                >
+                <button 
+                    type="submit" 
+                    class="px-8 py-4 orbit-gradient text-orbit-bg font-black rounded-sm hover:opacity-90 transition uppercase tracking-tighter"
+                >
+                    Initialize
+                </button>
+            </form>
+            <p class="text-[10px] text-orbit-text/20 mt-8 uppercase tracking-[0.2em]">Closed Beta • Q1 2025 Release</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-16 px-6 border-t border-orbit-text/5 text-center">
+        <div class="flex items-center justify-center gap-3 mb-8">
+            <div class="w-1.5 h-1.5 rounded-full bg-orbit-mint"></div>
+            <div class="w-1.5 h-1.5 rounded-full bg-orbit-cyan"></div>
+            <div class="w-1.5 h-1.5 rounded-full bg-orbit-blue"></div>
+        </div>
+        <div class="text-orbit-text/20 text-[10px] font-mono tracking-widest uppercase">
+            &copy; 2025 PROJECT ORBIT // Lead Developer: Doyoon // System: OpenClaw
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('waitlist-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = document.getElementById('email-input').value;
+            console.log('Deployment Initialization:', email);
+            alert('Initialization Successful.\nAccount ' + email + ' has been queued for deployment.');
+            this.reset();
+        });
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                document.querySelector(targetId).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
